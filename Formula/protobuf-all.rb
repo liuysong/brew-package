@@ -4,8 +4,8 @@
 class ProtobufAll < Formula
   desc ""
   homepage ""
-  url "https://github.com/liuysong/package/blob/b394f83d250d189d1e84bafd3a18950ce9e7835a/protobuf-all-3.6.1.tar.gz"
-  sha256 "22aec85e766dfc9facfa3b5ffe5999d2c05183fe6b40baa38bc207d3828144aa"
+  url "https://raw.githubusercontent.com/liuysong/package/master/protobuf-all-3.6.1.tar.gz"
+  sha256 "fd65488e618032ac924879a3a94fa68550b3b5bcb445b93b7ddf3c925b1a351f"
   license ""
 
   # depends_on "cmake" => :build
@@ -16,6 +16,8 @@ class ProtobufAll < Formula
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "make"
+    system "make install"
   end
 
   test do
@@ -28,6 +30,7 @@ class ProtobufAll < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
+    system "protoc --version"
     system "false"
   end
 end
