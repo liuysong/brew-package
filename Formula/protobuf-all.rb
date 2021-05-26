@@ -4,7 +4,7 @@
 class ProtobufAll < Formula
   desc ""
   homepage ""
-  url "https://raw.githubusercontent.com/liuysong/package/master/protobuf-all-3.6.1.tar.gz"
+  url "https://raw.githubusercontent.com/liuysong/package/master/protobuf-3.6.1.tar.gz"
   sha256 "fd65488e618032ac924879a3a94fa68550b3b5bcb445b93b7ddf3c925b1a351f"
   license ""
 
